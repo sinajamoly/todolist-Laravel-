@@ -12,7 +12,10 @@
                     {{$todo->due}}
                 </span>
             </div>
-
         </div>
+        <a href="/todo/{{$todo->id}}/edit" class="btn btn-default">edit</a>
+        {!! Form::open(['action'=>['TodosController@destroy',$todo->id],'method'=>'DELETE']) !!}
+            {{Form::submit('DELETE',['class'=>'btn btn-danger'])}}
+        {!! Form::close() !!}
     </div>
 @endsection
